@@ -1,0 +1,21 @@
+
+
+{% block content %}
+  <h1>Новости</h1>
+
+  <!-- Форма фильтрации -->
+  <form method="get">
+    {{ filterset.form.as_p }}
+    <button type="submit">Фильтровать</button>
+  </form>
+
+  <ul>
+    {% for article in filterset.qs %}
+      <li>
+        <h2>Заголовок: {{ article.title }}</h2>
+        <p>Дата: {{ article.pub_date }}</p>
+        <p>Текст: {{ article.text }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

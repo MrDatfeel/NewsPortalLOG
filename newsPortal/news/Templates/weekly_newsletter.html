@@ -1,0 +1,10 @@
+<h1>Weekly News Update</h1>
+<ul>
+{% for news in news_list %}
+    <li>
+        <h2>{{ news.title }}</h2>
+        <p>{{ news.preview }}</p>
+        <a href="{{ settings.SITE_URL }}/news/{{ news.pk }}">Read more</a>
+    </li>
+{% endfor %}
+</ul>
